@@ -1,0 +1,33 @@
+AGRIWATCH SIMULATOR — LANCEMENT SIMPLE
+
+1. Ouvrir ce dossier dans l'Explorateur Windows :
+Le dossier qui contient project.godot (le depot clone).
+
+2. Double-cliquer sur « Lancer AgriWatch.cmd ».
+   Attendre quelques secondes. Deux fenêtres s'ouvrent :
+   - la ferme Godot ;
+   - mosquitto_sub, qui affiche les messages reçus en direct.
+   Mosquitto et la passerelle démarrent en arrière-plan.
+   Le broker est local : 127.0.0.1:1883, sans Internet.
+
+3. Dans la ferme :
+   - Terrains : choisir une terre, lire les mesures et le diagnostic.
+   - Climat : pluie, sécheresse, chaleur, vitesse, pause.
+   - MQTT : vérifier « Broker connecté ».
+   Les messages arrivent environ toutes les 5 secondes réelles.
+
+4. Pour tout arrêter : double-cliquer « Arreter AgriWatch.cmd ».
+   Fermer seulement la ferme ne ferme pas le broker et la passerelle.
+
+Les fichiers restent sauvegardés. Au prochain lancement, la simulation
+repart de son état initial : les choix temporaires, le temps et les mesures
+de la session ne sont pas sauvegardés.
+
+Premiere installation : installer Godot 4, Python et Mosquitto.
+Creer .venv puis installer bridge/requirements.txt (voir README.md).
+Godot est detecte via GODOT_EXE, le PATH ou un dossier Godot dans Downloads.
+Mosquitto est detecte dans le PATH, Program Files ou tools/mosquitto.
+Les programmes tiers et .venv ne sont pas inclus dans Git.
+
+MODE FERME SEULE (sans MQTT)
+Ouvrir project.godot dans Godot, puis appuyer sur F5.

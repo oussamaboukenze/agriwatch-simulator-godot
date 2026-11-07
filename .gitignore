@@ -1,0 +1,23 @@
+.godot/
+.venv/
+__pycache__/
+*.local.json
+.env
+.runtime/
+tools/
+broker/*.log
+objectdb_snapshots/
+vulkan/
+export_templates/
+feature_profiles/
+script_templates/
+text_editor_themes/
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.tmp
+# Ancien lecteur web local, hors du simulateur publie.
+bridge/monitor.py

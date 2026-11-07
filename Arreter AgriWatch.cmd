@@ -1,0 +1,3 @@
+@echo off
+cd /d "%~dp0"
+powershell.exe -NoProfile -Command "$root = (Get-Location).Path; $python = Join-Path $root '.venv\Scripts\python.exe'; $bin = Join-Path $root 'tools\mosquitto\'; Get-CimInstance Win32_Process | Where-Object { ($_.Name -like '*Godot*' -and $_.CommandLine -like ('*' + $root + '*')) -or ($_.Name -eq 'python.exe' -and $_.ExecutablePath -eq $python -and $_.CommandLine -match 'bridge[/\\](bridge|monitor)\.py') -or ($_.Name -in @('mosquitto.exe','mosquitto_sub.exe') -and ($_.ExecutablePath -like ($bin + '*') -or $_.CommandLine -like ('*' + (Join-Path $root 'broker\mosquitto.conf') + '*') -or $_.CommandLine -like '*agriwatch-local-viewer*')) } | ForEach-Object { Stop-Process -Id $_.ProcessId -ErrorAction SilentlyContinue }"

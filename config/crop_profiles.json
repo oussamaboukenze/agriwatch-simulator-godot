@@ -1,0 +1,11 @@
+{
+  "notice": "Profils pédagogiques arbitraires pour tester le simulateur, pas des seuils agronomiques validés. Humidité = indice relatif simulé.",
+  "crops": {
+    "Blé": {"temperature": [12, 28], "soil_moisture": [35, 65]},
+    "Maïs": {"temperature": [20, 34], "soil_moisture": [50, 78]},
+    "Soja": {"temperature": [19, 32], "soil_moisture": [45, 72]},
+    "Orge": {"temperature": [10, 27], "soil_moisture": [22, 52]},
+    "Pomme de terre": {"temperature": [12, 24], "soil_moisture": [50, 75]},
+    "Tomate": {"temperature": [20, 32], "soil_moisture": [40, 68]}
+  }
+}
